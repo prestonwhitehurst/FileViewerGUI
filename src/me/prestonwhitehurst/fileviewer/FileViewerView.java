@@ -1,4 +1,4 @@
-package me.prestonwhitehurst.filemanager;
+package me.prestonwhitehurst.fileviewer;
 
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.FlowPane;

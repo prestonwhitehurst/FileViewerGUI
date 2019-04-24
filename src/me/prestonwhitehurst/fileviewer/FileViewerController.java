@@ -16,15 +16,11 @@ public class FileViewerController {
     }
 
     public void updateCurrentDirectory(File file) {
-        if(model.getCurrentDirectory().listFiles() != null) {
-            model.setCurrentDirectory(file);
-        }
+        model.setCurrentDirectory(file);
     }
 
     public void removeCurrentDirectory() {
-        if(model.getSizeOfArray() != 1) {
-            model.removeCurrentDirectory();
-        }
+        model.removeCurrentDirectory();
     }
 
     public File[] getFiles() {

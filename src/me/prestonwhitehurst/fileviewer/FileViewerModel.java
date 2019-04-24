@@ -1,7 +1,7 @@
 package me.prestonwhitehurst.fileviewer;
 
-import java.io.File;
 import java.util.ArrayList;
+import java.io.File;
 
 public class FileViewerModel {
     private final ArrayList<File> directoryArrayList;

@@ -8,7 +8,7 @@ public class FileViewer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        primaryStage.setTitle("File Manager");
+        primaryStage.setTitle("File Viewer");
         FileViewerModel model = new FileViewerModel();
         FileViewerView view = new FileViewerView();
         FileViewerController controller = new FileViewerController(model, view);

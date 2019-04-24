@@ -1,4 +1,4 @@
-package me.prestonwhitehurst.filemanager;
+package me.prestonwhitehurst.fileviewer;
 
 import java.io.File;
 import java.util.ArrayList;

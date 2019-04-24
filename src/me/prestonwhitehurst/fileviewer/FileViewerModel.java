@@ -31,14 +31,12 @@ public class FileViewerModel {
     }
 
     public void removeCurrentDirectory() {
-        directoryArrayList.remove(getCurrentDirectory());
+        if(directoryArrayList.size() != 1) {
+            directoryArrayList.remove(getCurrentDirectory());
+        }
     }
 
     public File[] getCurrentDirectoryFiles() {
         return getCurrentDirectory().listFiles();
-    }
-
-    public int getSizeOfArray() {
-        return directoryArrayList.size();
     }
 }

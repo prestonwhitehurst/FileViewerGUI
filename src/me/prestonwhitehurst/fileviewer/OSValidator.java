@@ -1,4 +1,4 @@
-package me.prestonwhitehurst.filemanager;
+package me.prestonwhitehurst.fileviewer;
 
 public class OSValidator {
 

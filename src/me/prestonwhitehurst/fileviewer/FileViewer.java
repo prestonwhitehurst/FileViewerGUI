@@ -1,4 +1,4 @@
-package me.prestonwhitehurst.filemanager;
+package me.prestonwhitehurst.fileviewer;
 
 import javafx.application.Application;
 import javafx.stage.Stage;

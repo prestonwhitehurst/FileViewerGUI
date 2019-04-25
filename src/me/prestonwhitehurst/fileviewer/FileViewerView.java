@@ -1,19 +1,19 @@
 package me.prestonwhitehurst.fileviewer;
 
+import javafx.scene.control.TableView;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Button;
-import javafx.scene.layout.FlowPane;
 
 public class FileViewerView {
     private VBox root;
     private Button backButton;
-    private FlowPane filesFlowPane;
+    private TableView<FileWrapper> filesTable;
 
     public FileViewerView() {
         root = new VBox();
         backButton = new Button("Go back");
-        filesFlowPane = new FlowPane();
-        root.getChildren().addAll(backButton, filesFlowPane);
+        filesTable = new TableView<>();
+        root.getChildren().addAll(backButton, filesTable);
     }
 
     public VBox getRoot() {
@@ -24,7 +24,7 @@ public class FileViewerView {
         return backButton;
     }
 
-    public FlowPane getFilesFlowPane() {
-        return filesFlowPane;
+    public TableView<FileWrapper> getFilesTable() {
+        return filesTable;
     }
 }

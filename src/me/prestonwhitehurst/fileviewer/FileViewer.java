@@ -8,11 +8,11 @@ public class FileViewer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        primaryStage.setTitle("File Viewer");
+        primaryStage.setTitle("File Manager");
         FileViewerModel model = new FileViewerModel();
         FileViewerView view = new FileViewerView();
         FileViewerController controller = new FileViewerController(model, view);
-        primaryStage.setScene(new Scene(view.getRoot(), 300, 275));
+        primaryStage.setScene(new Scene(controller.getView(), 550, 450));
         primaryStage.show();
     }
 

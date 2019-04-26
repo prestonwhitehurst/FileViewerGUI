@@ -1,8 +1,8 @@
 package me.prestonwhitehurst.fileviewer;
 
 import java.io.File;
-import java.text.SimpleDateFormat;
 import javafx.beans.property.SimpleStringProperty;
+import java.text.SimpleDateFormat;
 
 public class FileWrapper {
     private File file;

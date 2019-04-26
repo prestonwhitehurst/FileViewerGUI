@@ -1,11 +1,10 @@
 package me.prestonwhitehurst.fileviewer;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.io.File;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
-import java.util.ArrayList;
-import java.io.File;
-import java.util.Arrays;
 
 public class FileViewerModel {
     private final ArrayList<File> directoryArrayList;
@@ -24,9 +23,11 @@ public class FileViewerModel {
 
     public void setCurrentDirectory(File file) {
         if(file.isDirectory()) {
+            
             if(file.listFiles() != null) {
                 directoryArrayList.add(file);
             }
+            
         }
     }
 

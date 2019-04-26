@@ -1,8 +1,8 @@
 package me.prestonwhitehurst.fileviewer;
 
-import javafx.scene.control.TableView;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableView;
 
 public class FileViewerView {
     private VBox root;

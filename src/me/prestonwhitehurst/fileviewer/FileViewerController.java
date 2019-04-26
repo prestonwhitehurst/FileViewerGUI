@@ -1,13 +1,13 @@
 package me.prestonwhitehurst.fileviewer;
 
-import javafx.scene.control.Button;
-import javafx.scene.control.TableRow;
 import javafx.scene.layout.VBox;
-import javafx.collections.ObservableList;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.TableRow;
+import javafx.collections.ObservableList;
 import java.io.File;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class FileViewerController {
     private final FileViewerModel model;
@@ -17,8 +17,8 @@ public class FileViewerController {
     public FileViewerController(FileViewerModel model, FileViewerView view) {
         this.model = model;
         this.view = view;
-        initialiseTable(view.getFilesTable());
-        initialiseButton(view.getBackButton(), view.getFilesTable());
+        initialiseTableViewControls(view.getFilesTable());
+        initialiseBackButtonControl(view.getBackButton(), view.getFilesTable());
     }
 
     public VBox getView() {
@@ -37,7 +37,7 @@ public class FileViewerController {
         return model.getCurrentDirectoryFiles();
     }
 
-    public void initialiseTable(TableView<FileWrapper> filesTable) {
+    public void initialiseTableViewControls(TableView<FileWrapper> filesTable) {
         TableColumn nameCol = new TableColumn("Name");
         TableColumn sizeCol = new TableColumn("Size");
         TableColumn dateLastModifiedCol = new TableColumn("Last Modified");
@@ -63,7 +63,7 @@ public class FileViewerController {
         filesTable.getColumns().addAll(nameCol, sizeCol, dateLastModifiedCol);
     }
 
-    public void initialiseButton(Button backButton, TableView<FileWrapper> filesTable) {
+    public void initialiseBackButtonControl(Button backButton, TableView<FileWrapper> filesTable) {
         backButton.setOnAction(e -> {
             removeCurrentDirectory();
             data = getFiles();

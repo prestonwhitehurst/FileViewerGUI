@@ -5,9 +5,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.collections.ObservableList;
 import java.io.File;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.Alert;
+import java.awt.Desktop;
+import java.io.IOException;
 
 public class FileViewerController {
     private final FileViewerModel model;
@@ -53,9 +56,26 @@ public class FileViewerController {
             TableRow<FileWrapper> row = new TableRow<>();
             row.setOnMouseClicked(e -> {
                 if(e.getClickCount() == 2 && (!row.isEmpty())) {
-                    updateCurrentDirectory(row.getItem().getFile());
-                    data = getFiles();
-                    filesTable.setItems(data);
+
+                    if(row.getItem().getFile().isDirectory()) {
+                        updateCurrentDirectory(row.getItem().getFile());
+                        data = getFiles();
+                        filesTable.setItems(data);
+                    }
+
+                    else if(row.getItem().getFile().isFile()) {
+
+                        try {
+                            Desktop.getDesktop().open(row.getItem().getFile());
+                        }catch(IOException exc) {
+                            Alert dialog = new Alert(Alert.AlertType.ERROR);
+                            dialog.setHeaderText("File Could Not Be Opened");
+                            dialog.setContentText(exc.getMessage());
+                            dialog.setResizable(true);
+                            dialog.getDialogPane().setPrefSize(480, 320);
+                            dialog.showAndWait();
+                        }
+                    }
                 }
             });
             return row;
